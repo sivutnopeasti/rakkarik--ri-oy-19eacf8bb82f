@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakkarikööri Oy | Otsonointi Oulu</title>
+  <meta name="description" content="Rakkarikööri Oy otsonoi tilat Oulussa ja lähialueilla. Raikas sisäilma toimistoihin, liiketiloihin ja koteihin – poistaa hajut tehokkaasti. Pyydä tarjous!" />
+  <meta property="og:title" content="Rakkarikööri Oy | Otsonointi Oulu" />
+  <meta property="og:description" content="Tilojen otsonointi Oulun alueella. Tehokas ratkaisu home-, tupakka- ja kosteusvaurioiden hajuihin." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fi_FI" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rakkarikööri Oy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pyssysepäntie 1 a 29",
+      "postalCode": "90800",
+      "addressLocality": "Oulu",
+      "addressCountry": "FI"
+    },
+    "telephone": "+358442378143",
+    "email": "info@otsonointioulu.fi",
+    "url": "https://otsonointioulu.fi",
+    "areaServed": "Oulu"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER / NAVIGAATIO -->
+  <header id="site-header" role="banner">
+    <nav class="nav-container" aria-label="Päänavigaatio">
+      <a href="/" class="nav-logo" aria-label="Rakkarikööri Oy – etusivu">
+        Rakkarikööri Oy
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#palvelut" class="nav-link">Palvelut</a></li>
+        <li><a href="#meista" class="nav-link">Meistä</a></li>
+        <li><a href="#sijainti" class="nav-link">Sijainti</a></li>
+        <li><a href="#yhteystiedot" class="nav-link">Yhteystiedot</a></li>
+      </ul>
+
+      <a href="#yhteydenotto" class="btn btn-nav">Pyydä tarjous</a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobiilivalikko -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobiilivalikko" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#palvelut" class="mobile-nav-link">Palvelut</a></li>
+        <li><a href="#meista" class="mobile-nav-link">Meistä</a></li>
+        <li><a href="#sijainti" class="mobile-nav-link">Sijainti</a></li>
+        <li><a href="#yhteystiedot" class="mobile-nav-link">Yhteystiedot</a></li>
+        <li><a href="#yhteydenotto" class="btn btn-primary mobile-cta">Pyydä tarjous</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg-mesh" aria-hidden="true"></div>
+      <div class="hero-img-layer" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1733059312871-f15a83c3ff2f?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwxNXx8ZnJlc2glMjBjbGVhbiUyMGFpciUyMGluZG9vcnxlbnwwfDB8fHwxNzcyNzQ3MDcwfDA&ixlib=rb-4.1.0&w=1920&q=85&auto=format&fit=crop"
+          alt="Valoisa, raikas huone"
+          title="Photo by Declan Sun on Unsplash"
+          class="hero-bg-img"
+          loading="eager"
+        />
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-eyebrow">Otsonointi Oulu</h1>
+        <h2 class="hero-headline">Hajut poistuvat.<br>Tila raikastuu.</h2>
+        <p class="hero-sub">
+          Otsonoimme
+          <span class="rotating-text" aria-live="polite">
+            <span class="rotating-item active">toimistot</span>
+            <span class="rotating-item">vuokra-asunnot</span>
+            <span class="rotating-item">liiketilat</span>
+          </span>
+        </p>
+        <div class="hero-ctas">
+          <a href="#yhteydenotto" class="btn btn-primary btn-ripple">Pyydä tarjous</a>
+          <a href="#palvelut" class="btn btn-ghost">Lue lisää</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS-PALKKI -->
+    <section class="stats-bar" aria-label="Lukuja palveluistamme">
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-number" data-target="300" data-suffix="+">0</span>
+          <span class="stat-label">Otsonoitua kohdetta</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8" data-suffix=" v">0</span>
+          <span class="stat-label">Toimintavuotta</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="24" data-suffix=" h">0</span>
+          <span class="stat-label">Aloitusaika*</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100" data-suffix="%">0</span>
+          <span class="stat-label">Kemikaaliton</span>
+        </div>
+      </div>
+      <p class="stats-footnote">*tyypillisissä kohteissa Oulun alueella</p>
+    </section>
+
+    <!-- LOGO-PALKKI -->
+    <section class="logo-bar" aria-label="Yhteistyökumppanit">
+      <div class="container">
+        <p class="logo-bar-title">Luottavat meihin</p>
+        <div class="logo-bar-grid" aria-label="Asiakkaiden ja yhteistyökumppaneiden logot">
+          <div class="partner-logo" aria-label="Kiinteistöhuolto">
+            <svg viewBox="0 0 120 40" aria-hidden="true"><rect x="5" y="10" width="20" height="20" rx="3"/><text x="32" y="26" font-size="13" font-family="Sora, sans-serif" font-weight="600">Kiinteistöhuolto</text></svg>
+          </div>
+          <div class="partner-logo" aria-label="Vuokranantajat ry">
+            <svg viewBox="0 0 120 40" aria-hidden="true"><circle cx="15" cy="20" r="10"/><text x="32" y="26" font-size="13" font-family="Sora, sans-serif" font-weight="600">Vuokranantajat</text></svg>
+          </div>
+          <div class="partner-logo" aria-label="Siivouspalvelu">
+            <svg viewBox="0 0 120 40" aria-hidden="true"><polygon points="15,8 25,32 5,32"/><text x="32" y="26" font-size="13" font-family="Sora, sans-serif" font-weight="600">Siivouspalvelu</text></svg>
+          </div>
+          <div class="partner-logo" aria-label="Taloyhtiöt">
+            <svg viewBox="0 0 120 40" aria-hidden="true"><rect x="5" y="8" width="20" height="24" rx="2"/><text x="32" y="26" font-size="13" font-family="Sora, sans-serif" font-weight="600">Taloyhtiöt</text></svg>
+          </div>
+          <div class="partner-logo" aria-label="Hotelli & Ravintola">
+            <svg viewBox="0 0 140 40" aria-hidden="true"><ellipse cx="15" cy="20" rx="10" ry="10"/><text x="32" y="26" font-size="13" font-family="Sora, sans-serif" font-weight="600">Hotelli & Ravintola</text></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALVELUT -->
+    <section class="palvelut" id="palvelut" aria-labelledby="palvelut-heading">
+      <div class="container">
+        <div class="section-header reveal-clip">
+          <span class="section-tag">Mitä teemme</span>
+          <h2 id="palvelut-heading" class="section-title">Tilojen raikastus otsonilla</h2>
+          <p class="section-desc">Otsonointi tuhoaa hajuja ja mikrobeja molekyylitasolla ilman kemikaaleja tai hajusteita.</p>
+        </div>
+
+        <div class="palvelut-grid">
+
+          <article class="palvelu-kortti reveal-clip">
+            <div class="palvelu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 4C24 4 10 16 10 26a14 14 0 0 0 28 0C38 16 24 4 24 4z"/>
+                <path d="M24 34v-8M20 30l4-4 4 4"/>
+              </svg>
+            </div>
+            <h3 class="palvelu-nimi">Asuntojen otsonointi</h3>
+            <p class="palvelu-kuvaus">Vuokra-asuntojen raikastus ennen uusia asukkaita, home- tai kosteusvaurioiden jälkihoito sekä lemmikkien hajujen poisto. Otsonointilaite toimii tilassa sovitun ajan, minkä jälkeen tila on käyttövalmis.</p>
+            <ul class="palvelu-lista">
+              <li>Tupakanhaju</li>
+              <li>Lemmikit ja eläinperäiset hajut</li>
+              <li>Homeenhaju kosteusvahingoissa</li>
+            </ul>
+          </article>
+
+          <article class="palvelu-kortti reveal-clip">
+            <div class="palvelu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="12" width="36" height="28" rx="3"/>
+                <path d="M16 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/>
+                <line x1="24" y1="22" x2="24" y2="32"/>
+                <line x1="19" y1="27" x2="29" y2="27"/>
+              </svg>
+            </div>
+            <h3 class="palvelu-nimi">Liike- ja toimitilat</h3>
+            <p class="palvelu-kuvaus">Ravintolat, hotellit, toimistot ja myymälät tarvitsevat säännöllistä raikastusta. Otsonointi on ihanteellinen ratkaisu tiloihin, joissa kemialliset hajusteet eivät ole vaihtoehto.</p>
+            <ul class="palvelu-lista">
+              <li>Ravintolat ja keittiöt</li>
+              <li>Hotellihuoneet</li>
+              <li>Toimistot ja kokoustilat</li>
+            </ul>
+          </article>
+
+          <article class="palvelu-kortti reveal-clip">
+            <div class="palvelu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="20" width="40" height="18" rx="3"/>
+                <path d="M8 20v-6a2 2 0 0 1 2-2h28a2 2 0 0 1 2 2v6"/>
+                <circle cx="24" cy="29" r="4"/>
+                <line x1="24" y1="4" x2="24" y2="12"/>
+                <line x1="18" y1="8" x2="30" y2="8"/>
+              </svg>
+            </div>
+            <h3 class="palvelu-nimi">Ajoneuvot</h3>
+            <p class="palvelu-kuvaus">Auton, pakettiauton tai linja-auton sisätilojen hajunpoisto. Tupakka, lemmikit tai vuosien varrella syntyneet hajut poistuvat tehokkaasti.</p>
+            <ul class="palvelu-lista">
+              <li>Henkilöautot</li>
+              <li>Pakettiautot</li>
+              <li>Erikoisajoneuvot</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TUNNELMA-KUVA + MEISTÄ -->
+    <section class="meista" id="meista" aria-labelledby="meista-heading">
+      <div class="meista-kuvapuoli">
+        <img
+          src="https://images.unsplash.com/photo-1758548157747-285c7012db5b?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwxMHx8YnJpZ2h0JTIwcmVub3ZhdGVkJTIwc3BhY2V8ZW58MHwwfHx8MTc3Mjc0NzA3MXww&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+          alt="Raikas, valoisa tila otsonoinnin jälkeen"
+          title="Photo by Dominik on Unsplash"
+          loading="lazy"
+          class="meista-kuva"
+        />
+      </div>
+      <div class="meista-tekstipuoli">
+        <div class="reveal-clip">
+          <span class="section-tag">Meistä</span>
+          <h2 id="meista-heading" class="section-title">Oululainen otsonointiyritys</h2>
+          <p>Rakkarikööri Oy keskittyy tilojen raikastukseen otsonilla. Palvelemme Oulun alueella taloyhtiöitä, vuokranantajia, ravintoloita ja yksityishenkilöitä.</p>
+          <p>Otsonointi on kemikaaliton menetelmä. Otsoni (O₃) hajottaa hajumolekyylit ja tappaa bakteerit sekä homeitiöt. Käsittelyn jälkeen otsoni hajoaa takaisin hapeksi eikä jätä jälkiä.</p>
+          <p>Kerro kohde ja pinta-ala tai koko, saat hinta-arvion nopeasti.</p>
+          <a href="#yhteydenotto" class="btn btn-primary btn-ripple">Pyydä tarjous</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKUU-OSIO -->
+    <section class="takuu-osio" aria-labelledby="takuu-heading">
+      <div class="container">
+        <div class="section-header reveal-clip">
+          <span class="section-tag">Palvelulupauksemme</span>
+          <h2 id="takuu-heading" class="section-title">Mitä saat meiltä</h2>
+        </div>
+        <div class="takuu-grid">
+          <div class="takuu-kortti reveal-clip">
+            <div class="takuu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 4l4.5 9.1L39 14.8l-7.5 7.3 1.8 10.3L24 27l-9.3 4.9 1.8-10.3L9 14.8l10.5-1.7z"/>
+              </svg>
+            </div>
+            <h3>Tulos tai uusintakäynti</h3>
+            <p>Jos haju ei poistu sovitusti, tulemme uudelleen ilman lisäveloitusta.</p>
+          </div>
+          <div class="takuu-kortti reveal-clip">
+            <div class="takuu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18"/>
+                <polyline points="24 14 24 24 30 30"/>
+              </svg>
+            </div>
+            <h3>Hinta-arvio 24 tunnissa</h3>
+            <p>Lähetä viesti tai soita. Kerro tilan koko ja ongelma, saat hinnan saman päivän aikana.</p>
+          </div>
+          <div class="takuu-kortti reveal-clip">
+            <div class="takuu-ikoni" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h24M12 28h16"/>
+                <rect x="6" y="8" width="36" height="32" rx="4"/>
+              </svg>
+            </div>
+            <h3>Kemikaaliton menetelmä</h3>
+            <p>Ei hajusteita, ei peiteaineita. Otsonointi poistaa hajun lähteestä.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALVELU-KUVA -->
+    <section class="palvelu-kuva-osio" aria-label="Otsonointilaitteisto">
+      <div class="container palvelu-kuva-layout">
+        <div class="palvelu-kuva-teksti reveal-clip">
+          <span class="section-tag">Miten se toimii</span>
+          <h2 class="section-title">Otsonointi kolmessa vaiheessa</h2>
+          <ol class="prosessi-lista">
+            <li>
+              <span class="prosessi-numero" aria-hidden="true">01</span>
+              <div>
+                <strong>Arviointi</strong>
+                <p>Kerrot tilan koon ja ongelman. Sovimme ajankohdan ja hinnan.</p>
+              </div>
+            </li>
+            <li>
+              <span class="prosessi-numero" aria-hidden="true">02</span>
+              <div>
+                <strong>Käsittely</strong>
+                <p>Otsonointilaite toimii tilassa 1–6 tuntia kohteen mukaan. Tila on tyhjillään käsittelyn ajan.</p>
+              </div>
+            </li>
+            <li>
+              <span class="prosessi-numero" aria-hidden="true">03</span>
+              <div>
+                <strong>Tuuletus ja käyttöönotto</strong>
+                <p>Käsittelyn jälkeen tila tuuletetaan noin tunnin ajan, minkä jälkeen se on taas käyttövalmis.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="palvelu-kuva-img reveal-clip">
+          <img
+            src="https://images.unsplash.com/photo-1759516206394-912682833a12?ixid=M3w4ODYwNTl8MHwxfHNlYXJjaHwxMnx8dmVudGlsYXRpb24lMjBwdXJpZmljYXRpb258ZW58MHwwfHx8MTc3Mjc0NzA3MHww&ixlib=rb-4.1.0&w=1080&q=85&auto=format&fit=crop"
+            alt="Ilmanpuhdistukseen liittyvää laitteistoa"
+            title="Photo by Preillumination SeTh on Unsplash"
+            loading="lazy"
+            class="rounded-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SIJAINTI -->
+    <section class="sijainti-osio" id="sijainti" aria-labelledby="sijainti-heading">
+      <div class="container">
+        <div class="section-header reveal-clip">
+          <span class="section-tag">Sijainti</span>
+          <h2 id="sijainti-heading" class="section-title">Missä palvelemme</h2>
+        </div>
+        <div class="sijainti-layout">
+          <div class="sijainti-kartta reveal-clip">
+            <iframe
+              src="https://maps.google.com/maps?q=Pyssysep%C3%A4ntie%201%20a%2029%2C%2090800%2C%20Oulu&output=embed"
+              width="100%"
+              height="350"
+              style="border:0; border-radius:12px;"
+              allowfullscreen
+              loading="lazy"
+              title="Rakkarikööri Oy sijainti kartalla"
+              aria-label="Google Maps -kartta: Pyssysepäntie 1 a 29, 90800 Oulu"
+            ></iframe>
+          </div>
+          <div class="sijainti-tiedot reveal-clip">
+            <address class="yhteystiedot-lista">
+              <div class="yhteystieto-rivi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Pyssysepäntie 1 a 29<br>90800 Oulu</span>
+              </div>
+              <div class="yhteystieto-rivi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.48 2 2 0 0 1 3.6 1.31h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                <a href="tel:+358442378143">044 237 8143</a>
+              </div>
+              <div class="yhteystieto-rivi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:info@otsonointioulu.fi">info@otsonointioulu.fi</a>
+              </div>
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YHTEYDENOTTO -->
+    <section class="yhteydenotto" id="yhteydenotto" aria-labelledby="yhteydenotto-heading">
+      <div class="container">
+        <div class="yhteydenotto-layout">
+          <div class="yhteydenotto-teksti reveal-clip">
+            <span class="section-tag">Ota yhteyttä</span>
+            <h2 id="yhteydenotto-heading" class="section-title">Pyydä tarjous</h2>
+            <p>Kerro kohteen tyyppi (asunto, toimisto, ajoneuvo) ja pinta-ala tai koko. Vastaamme yleensä saman päivän aikana.</p>
+            <div id="yhteystiedot" class="yhteystiedot-lista">
+              <div class="yhteystieto-rivi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.48 2 2 0 0 1 3.6 1.31h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                <a href="tel:+358442378143">044 237 8143</a>
+              </div>
+              <div class="yhteystieto-rivi">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:info@otsonointioulu.fi">info@otsonointioulu.fi</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="lomake-wrapper reveal-clip">
+            <form
+              id="contact-form" action="https://formsubmit.co/info@otsonointioulu.fi"
+              method="POST"
+              novalidate
+              aria-label="Yhteydenottolomake"
+            >
+  <input type="hidden" name="_subject" value="Yhteydenotto – Rakkarikööri Oy">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nimi">Nimi *</label>
+                  <input
+                    type="text"
+                    id="nimi"
+                    name="nimi"
+                    autocomplete="name"
+                    required
+                    aria-required="true"
+                    placeholder="Matti Meikäläinen"
+                  />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label for="puhelin">Puhelin *</label>
+                  <input
+                    type="tel"
+                    id="puhelin"
+                    name="puhelin"
+                    autocomplete="tel"
+                    required
+                    aria-required="true"
+                    placeholder="040 000 0000"
+                  />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email">Sähköposti</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="matti@esimerkki.fi"
+                  />
+                  <span class="field-error" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="kohde">Kohde ja kuvaus *</label>
+                <textarea
+                  id="kohde"
+                  name="kohde"
+                  rows="5"
+                  required
+                  aria-required="true"
+                  placeholder="Esim. 2h+k vuokra-asunto, n. 55 m², tupakanhaju. Milloin sopisi?"
+                ></textarea>
+                <span class="field-error" aria-live="polite"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-ripple btn-full" aria-label="Lähetä tarjouspyyntö">
+                Lähetä tarjouspyyntö
+              </button>
+              <div class="form-status" id="form-status" role="alert" aria-live="assertive"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Sivuston alatunniste">
+    <div class="container footer-layout">
+      <div class="footer-brand">
+        <span class="footer-logo">Rakkarikööri Oy</span>
+        <p class="footer-desc">Tilojen otsonointi Oulun alueella.</p>
+        <p class="footer-contact">
+          <a href="tel:+358442378143">044 237 8143</a><br>
+          <a href="mailto:info@otsonointioulu.fi">info@otsonointioulu.fi</a>
+        </p>
+      </div>
+      <div class="footer-links">
+        <h3 class="footer-links-title">Sivuston osiot</h3>
+        <ul role="list">
+          <li><a href="#palvelut">Palvelut</a></li>
+          <li><a href="#meista">Meistä</a></li>
+          <li><a href="#sijainti">Sijainti</a></li>
+          <li><a href="#yhteydenotto">Yhteydenotto</a></li>
+        </ul>
+      </div>
+      <div class="footer-osoite">
+        <h3 class="footer-links-title">Osoite</h3>
+        <address>
+          Pyssysepäntie 1 a 29<br>
+          90800 Oulu
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Rakkarikööri Oy. Kaikki oikeudet pidätetään.</p>
+      <p>Kuvat: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

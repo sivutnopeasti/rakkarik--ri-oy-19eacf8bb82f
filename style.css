@@ -1,0 +1,1352 @@
+/* ==========================================================================
+   RAKKARIKÖÖRI OY – style.css
+   Värimaailma: Harmaasävyinen, moderni, Sora-fontti
+   ========================================================================== */
+
+/* ---------- CSS-muuttujat ---------- */
+:root {
+  --c-bg:           #f2f2f0;
+  --c-surface:      #ffffff;
+  --c-surface-2:    #e8e8e5;
+  --c-dark:         #1a1a1a;
+  --c-dark-2:       #2c2c2c;
+  --c-mid:          #4a4a4a;
+  --c-muted:        #7a7a7a;
+  --c-accent:       #3d5a80;
+  --c-accent-2:     #2b4160;
+  --c-accent-light: #e8eef5;
+  --c-border:       #d4d4d0;
+  --c-white:        #ffffff;
+  --c-error:        #c0392b;
+
+  --font-head: 'Sora', sans-serif;
+  --font-body: 'Inter', 'Sora', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.11);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
+
+  --transition:      0.25s ease;
+  --transition-slow: 0.45s ease;
+
+  --nav-h:       72px;
+  --container-w: 1160px;
+}
+
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--c-dark);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--c-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--c-accent-2); }
+a:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+ul, ol { list-style: none; }
+address { font-style: normal; }
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   NAVIGAATIO
+   ========================================================================== */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition:
+    background var(--transition-slow),
+    box-shadow var(--transition-slow);
+}
+
+#site-header.scrolled {
+  background: rgba(22, 22, 22, 0.97);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.28);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  transition: padding var(--transition-slow);
+}
+
+#site-header.scrolled .nav-container {
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+/* Logo */
+.nav-logo {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--c-white);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition);
+}
+.nav-logo:hover { opacity: 0.82; color: var(--c-white); }
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  display: inline-block;
+  transition: color var(--transition), transform var(--transition);
+}
+.nav-link:hover {
+  color: var(--c-white);
+  transform: translateY(-2px);
+}
+.nav-link:focus-visible { color: var(--c-white); }
+
+/* Nav CTA button */
+.btn-nav {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-white);
+  background: var(--c-accent);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--c-accent);
+  text-decoration: none;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+.btn-nav:hover {
+  background: var(--c-accent-2);
+  border-color: var(--c-accent-2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  color: var(--c-white);
+}
+
+/* Hampurilainen */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--c-white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobiilivalikko – opaque tausta */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1a1a1a;
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s ease;
+}
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 2rem 1.5rem;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--c-white);
+  text-decoration: none;
+  transition: color var(--transition), transform var(--transition);
+  display: block;
+}
+.mobile-nav-link:hover {
+  color: #7fa8d0;
+  transform: translateX(6px);
+}
+
+.mobile-cta {
+  margin-top: 0.5rem;
+  padding: 0.85rem 2.5rem !important;
+  font-size: 1rem !important;
+  text-align: center;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--c-accent);
+  color: var(--c-white);
+  border-color: var(--c-accent);
+}
+.btn-primary:hover {
+  background: var(--c-accent-2);
+  border-color: var(--c-accent-2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--c-white);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255,255,255,0.45);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--c-white);
+  transform: translateY(-2px);
+  color: var(--c-white);
+}
+
+.btn-full { width: 100%; }
+
+/* Ripple */
+.btn-ripple .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.28);
+  transform: scale(0);
+  animation: ripple-anim 0.6s linear;
+  pointer-events: none;
+}
+@keyframes ripple-anim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Mesh gradient tausta-animaatio */
+.hero-bg-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(61,90,128,0.58) 0%, transparent 58%),
+    radial-gradient(ellipse at 80% 70%, rgba(43,65,96,0.48) 0%, transparent 54%),
+    radial-gradient(ellipse at 50% 100%, rgba(26,26,26,0.72) 0%, transparent 60%);
+  animation: meshMove 14s ease-in-out infinite alternate;
+}
+@keyframes meshMove {
+  0%   { background-position: 20% 30%, 80% 70%, 50% 100%; }
+  33%  { background-position: 28% 22%, 74% 78%, 53% 96%; }
+  66%  { background-position: 16% 38%, 82% 64%, 48% 104%; }
+  100% { background-position: 24% 26%, 76% 74%, 51% 98%; }
+}
+
+.hero-img-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(22,22,22,0.80) 0%,
+    rgba(61,90,128,0.50) 55%,
+    rgba(22,22,22,0.74) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 3.5rem) 1.5rem 5rem;
+}
+
+/* SEO H1 – eyebrow */
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 800;
+  color: var(--c-white);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+  max-width: 680px;
+}
+
+/* Vaihtuva teksti */
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.rotating-text {
+  position: relative;
+  display: inline-block;
+  height: 1.65em;
+  overflow: hidden;
+  vertical-align: middle;
+  min-width: 140px;
+}
+.rotating-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--c-white);
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  white-space: nowrap;
+}
+.rotating-item.active { opacity: 1; }
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ==========================================================================
+   STATS-PALKKI
+   ========================================================================== */
+.stats-bar {
+  background: var(--c-dark);
+  color: var(--c-white);
+  padding: 3.5rem 1.5rem 2.25rem;
+}
+
+.stats-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.75rem 3rem;
+  flex: 1 1 160px;
+}
+
+.stat-number {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  color: var(--c-white);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.stat-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+  margin: 0.25rem 0;
+}
+
+.stats-footnote {
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 1.25rem;
+}
+
+/* ==========================================================================
+   LOGO-PALKKI
+   ========================================================================== */
+.logo-bar {
+  background: var(--c-surface);
+  padding: 3rem 1.5rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.logo-bar-title {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 2rem;
+}
+
+.logo-bar-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  opacity: 0.32;
+  filter: grayscale(1);
+  transition: opacity var(--transition), filter var(--transition);
+  cursor: default;
+}
+.partner-logo svg {
+  width: 140px;
+  height: 40px;
+  fill: var(--c-mid);
+  overflow: visible;
+}
+.partner-logo svg text  { fill: var(--c-mid); }
+.partner-logo svg rect,
+.partner-logo svg circle,
+.partner-logo svg polygon,
+.partner-logo svg ellipse {
+  fill: var(--c-mid);
+  stroke: none;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.partner-logo:hover svg { fill: var(--c-accent); }
+.partner-logo:hover svg text   { fill: var(--c-accent); }
+.partner-logo:hover svg rect,
+.partner-logo:hover svg circle,
+.partner-logo:hover svg polygon,
+.partner-logo:hover svg ellipse {
+  fill: var(--c-accent);
+}
+
+/* ==========================================================================
+   SECTION GLOBALS
+   ========================================================================== */
+.section-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+  background: var(--c-accent-light);
+  padding: 0.28rem 0.85rem;
+  border-radius: 100px;
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.55rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  color: var(--c-dark);
+  margin-bottom: 0.7rem;
+}
+
+.section-desc {
+  color: var(--c-mid);
+  font-size: 1.02rem;
+}
+
+/* ==========================================================================
+   PALVELUT
+   ========================================================================== */
+.palvelut {
+  padding: 6rem 1.5rem;
+  background: var(--c-bg);
+}
+
+.palvelut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+/* hover_kortit */
+.palvelu-kortti {
+  background: var(--c-surface);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  border: 1.5px solid var(--c-border);
+  box-shadow: inset 0 0 0 0 transparent;
+  transition:
+    box-shadow var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+.palvelu-kortti:hover {
+  box-shadow: 0 10px 36px rgba(61,90,128,0.14);
+  border-color: var(--c-accent);
+  transform: translateY(-5px);
+}
+
+.palvelu-ikoni {
+  width: 46px;
+  height: 46px;
+  color: var(--c-accent);
+  margin-bottom: 1.25rem;
+}
+.palvelu-ikoni svg {
+  width: 100%;
+  height: 100%;
+}
+
+.palvelu-nimi {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: 0.65rem;
+}
+
+.palvelu-kuvaus {
+  color: var(--c-mid);
+  font-size: 0.93rem;
+  margin-bottom: 1rem;
+}
+
+.palvelu-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.palvelu-lista li {
+  font-size: 0.87rem;
+  color: var(--c-mid);
+  padding-left: 1.1rem;
+  position: relative;
+}
+.palvelu-lista li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-accent);
+  font-size: 0.72rem;
+  top: 0.15em;
+}
+
+/* ==========================================================================
+   MEISTÄ
+   ========================================================================== */
+.meista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+.meista-kuvapuoli {
+  overflow: hidden;
+  position: relative;
+}
+.meista-kuva {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.meista-kuvapuoli:hover .meista-kuva {
+  transform: scale(1.03);
+}
+
+.meista-tekstipuoli {
+  background: var(--c-dark);
+  color: var(--c-white);
+  padding: 5rem 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.meista-tekstipuoli .section-tag {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.75);
+}
+.meista-tekstipuoli .section-title {
+  color: var(--c-white);
+}
+.meista-tekstipuoli p {
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 1rem;
+  font-size: 0.965rem;
+}
+.meista-tekstipuoli p:last-of-type {
+  margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   TAKUU-OSIO
+   ========================================================================== */
+.takuu-osio {
+  padding: 6rem 1.5rem;
+  background: var(--c-surface);
+}
+
+.takuu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+/* hover_kortit */
+.takuu-kortti {
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  border: 1.5px solid var(--c-border);
+  background: var(--c-bg);
+  transition:
+    box-shadow var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+.takuu-kortti:hover {
+  box-shadow: 0 10px 36px rgba(61,90,128,0.12);
+  border-color: var(--c-accent);
+  transform: translateY(-4px);
+}
+
+.takuu-ikoni {
+  width: 38px;
+  height: 38px;
+  color: var(--c-accent);
+  margin-bottom: 1rem;
+}
+.takuu-ikoni svg {
+  width: 100%;
+  height: 100%;
+}
+
+.takuu-kortti h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: 0.45rem;
+}
+.takuu-kortti p {
+  font-size: 0.9rem;
+  color: var(--c-mid);
+}
+
+/* ==========================================================================
+   PALVELU-KUVA OSIO
+   ========================================================================== */
+.palvelu-kuva-osio {
+  padding: 6rem 1.5rem;
+  background: var(--c-bg);
+}
+
+.palvelu-kuva-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.palvelu-kuva-teksti .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.prosessi-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.prosessi-lista li {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.prosessi-numero {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c-accent);
+  opacity: 0.22;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+
+.prosessi-lista strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--c-dark);
+  margin-bottom: 0.22rem;
+}
+.prosessi-lista p {
+  font-size: 0.9rem;
+  color: var(--c-mid);
+}
+
+.rounded-img {
+  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.rounded-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.18);
+}
+
+/* ==========================================================================
+   SIJAINTI
+   ========================================================================== */
+.sijainti-osio {
+  padding: 6rem 1.5rem;
+  background: var(--c-surface);
+}
+
+.sijainti-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 3rem;
+  align-items: start;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.sijainti-kartta iframe {
+  display: block;
+  box-shadow: var(--shadow-md);
+}
+
+.yhteystiedot-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.75rem;
+  background: var(--c-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+}
+
+.yhteystieto-rivi {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  color: var(--c-mid);
+  font-size: 0.95rem;
+}
+.yhteystieto-rivi svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--c-accent);
+  margin-top: 2px;
+  stroke: currentColor;
+}
+.yhteystieto-rivi a {
+  color: var(--c-dark);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.yhteystieto-rivi a:hover { color: var(--c-accent); }
+
+/* ==========================================================================
+   YHTEYDENOTTO
+   ========================================================================== */
+.yhteydenotto {
+  padding: 6rem 1.5rem;
+  background: var(--c-dark);
+  color: var(--c-white);
+}
+
+.yhteydenotto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.yhteydenotto .section-tag {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.72);
+}
+.yhteydenotto .section-title {
+  color: var(--c-white);
+}
+.yhteydenotto-teksti p {
+  color: rgba(255,255,255,0.68);
+  margin-bottom: 1.75rem;
+  font-size: 0.97rem;
+}
+
+.yhteydenotto .yhteystiedot-lista {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+.yhteydenotto .yhteystieto-rivi {
+  color: rgba(255,255,255,0.65);
+}
+.yhteydenotto .yhteystieto-rivi svg {
+  color: #7fa8d0;
+}
+.yhteydenotto .yhteystieto-rivi a {
+  color: rgba(255,255,255,0.88);
+}
+.yhteydenotto .yhteystieto-rivi a:hover {
+  color: var(--c-white);
+}
+
+/* Lomake-wrapper */
+.lomake-wrapper {
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.form-row {
+  margin-bottom: 1.2rem;
+}
+.form-row.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0;
+}
+.form-row.two-col .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+
+label {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--c-dark);
+}
+
+/* lomake: focus + error */
+input,
+textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-dark);
+  background: var(--c-bg);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  width: 100%;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--c-muted);
+}
+input:hover,
+textarea:hover {
+  border-color: #b0b0ac;
+}
+input:focus,
+textarea:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(61,90,128,0.18);
+  background: var(--c-white);
+}
+input.error,
+textarea.error {
+  border-color: var(--c-error);
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.14);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.field-error {
+  font-size: 0.78rem;
+  color: var(--c-error);
+  min-height: 1em;
+  display: block;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  min-height: 0;
+  transition: all var(--transition);
+}
+.form-status.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.85rem 1rem;
+}
+.form-status.error {
+  background: #ffebee;
+  color: var(--c-error);
+  padding: 0.85rem 1rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background: #111111;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding: 4rem 1.5rem 3rem;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: 0.7rem;
+  text-decoration: none;
+}
+
+.footer-desc {
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-contact a {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.88rem;
+  display: block;
+  line-height: 1.95;
+  transition: color var(--transition);
+}
+.footer-contact a:hover { color: var(--c-white); }
+
+.footer-links-title {
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 1rem;
+}
+
+.footer-links ul li { margin-bottom: 0.55rem; }
+.footer-links a {
+  color: rgba(255,255,255,0.62);
+  font-size: 0.88rem;
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--c-white); }
+
+.footer-osoite address {
+  color: rgba(255,255,255,0.62);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: var(--container-w);
+  margin: 0 auto;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+.footer-bottom a {
+  color: rgba(255,255,255,0.42);
+  transition: color var(--transition);
+}
+.footer-bottom a:hover { color: var(--c-white); }
+
+/* ==========================================================================
+   SCROLL REVEAL – clip-path
+   ========================================================================== */
+.reveal-clip {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-clip.revealed {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .meista {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .meista-kuvapuoli {
+    height: 340px;
+  }
+  .meista-tekstipuoli {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .palvelu-kuva-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .rounded-img {
+    height: 320px;
+  }
+
+  .sijainti-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .yhteydenotto-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links,
+  .btn-nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+
+  .hero-content {
+    padding: calc(var(--nav-h) + 2.5rem) 1.25rem 4rem;
+  }
+  .hero-headline {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .stats-container {
+    flex-wrap: wrap;
+  }
+  .stat-divider {
+    display: none;
+  }
+  .stat-item {
+    flex-basis: 45%;
+    padding: 0.75rem 1rem;
+  }
+
+  .palvelut,
+  .takuu-osio,
+  .palvelu-kuva-osio,
+  .sijainti-osio,
+  .yhteydenotto {
+    padding: 4rem 1.25rem;
+  }
+
+  .palvelut-grid,
+  .takuu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meista-tekstipuoli {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .form-row.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .lomake-wrapper {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1.25rem 2rem;
+  }
+  .footer-brand { grid-column: auto; }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .stat-item {
+    flex-basis: 100%;
+  }
+  .logo-bar-grid {
+    gap: 1rem;
+  }
+  .partner-logo svg {
+    width: 110px;
+  }
+  .rounded-img {
+    height: 240px;
+  }
+}
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+@media print {
+  #site-header,
+  .mobile-menu,
+  .hero-bg-mesh {
+    display: none !important;
+  }
+  .hero {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  body { font-size: 12pt; }
+  a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: var(--c-muted);
+  }
+}
+
+html { overflow-x: hidden; }
+.nav-menu { z-index: 999; }
+
+/* === Visuaaliset korjaukset === */
+/* Mobiilinavigaatio: opaque tausta kun hamburger-menu on auki */
+@media (max-width: 767px) {
+  .mobile-menu {
+    background-color: #0f1b2d;
+    /* Varmistetaan että menu on hero-kuvan päällä eikä läpinäkyvä */
+    position: relative;
+    z-index: 999;
+  }
+
+  /* Varmistetaan myös nav-container tausta mobiilissa */
+  .nav-container {
+    background-color: #0f1b2d;
+  }
+
+  /* Jos header käyttää glassmorphism/transparent tyyliä,
+     pakotetaan kiinteä tausta mobiilissa */
+  #site-header {
+    background-color: #0f1b2d;
+  }
+}
